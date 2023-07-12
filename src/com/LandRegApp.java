@@ -1,6 +1,6 @@
 package com;
 import com.controller.Controller;
-import com.controller.input;
+
 
 import java.util.Scanner;
 
@@ -19,6 +19,7 @@ public class LandRegApp {
                     "<<< 5. 프로그램 종료>>> || ");
             System.out.print("하달 : ");
             cmdNum = sc.nextInt();
+            sc.nextLine();
             switch (cmdNum){
                 case 1:
                     ctrl.insert();

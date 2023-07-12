@@ -1,7 +1,7 @@
 package com.controller;
 import java.util.Scanner;
 import com.entity.LendReg;
-import com.controller.input;
+
 public class Controller {
     Scanner sc = new Scanner(System.in);
     LendReg lendArr[] = new LendReg[20];
@@ -52,23 +52,37 @@ public class Controller {
     }
     public void delete(){
         System.out.println("삭제 페이지 입력 : ");
-        pageNum = input.nextInt();
+        pageNum = sc.nextInt();
+        sc.nextLine();
         swit[pageNum -1] = false;
         lendArr[pageNum -1] = null;
 
     }
     public void search(){
         System.out.println("검색 페이지: ");
-        pageNum = input.nextInt();
+        pageNum = sc.nextInt();
+        sc.nextLine();
         System.out.println(lendArr[pageNum -1].toString());
     }
     public void update(){
+        System.out.println("수정할 페이지 입력: ");
+        pageNum = sc.nextInt();
+        sc.nextLine();
+        swit[pageNum -1] = false;
+        lendArr[pageNum -1] = null;
+
+
+        System.out.print("이름: ");
+        if(sc.hasNext()){name = sc.nextLine();}
+        System.out.print("나이: ");
+        if(sc.hasNext()){age = Integer.parseInt(sc.nextLine());sc.nextLine();}
+        System.out.print("주소: ");
+        if(sc.hasNext()){address = sc.nextLine();}
+
+        lendArr[pageNum -1 ] = new LendReg(name, age, address);
+        System.out.println(pageNum+"번째 페이지 수정됨");
 
     }
 
-    public int input(){
-        Scanner in = new Scanner(System.in);
-        int input = in.nextInt();
-        return input;
-    }
+
 }
