@@ -12,23 +12,25 @@ public class LandRegAppTest {
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        int index = 1;
+
         try{
             con = DBConnection.getConnection();
             StringBuffer sql = new StringBuffer();
-            sql.append("select id, `name`, age, asset, address");
+            sql.append("select * from people");
 
             pstmt = con.prepareStatement(sql.toString());
 
             rs = pstmt.executeQuery();
 
             while(rs.next()){
-                index = 1;
-                int id = rs.getInt(index++);
-                String name = rs.getString(index++);
-                int age = rs.getInt(index++);
-                int asset = rs.getInt(index++);
-                String address = rs.getString(index++);
+
+                int id = rs.getInt(1);
+                String name = rs.getString(2);
+                int age = rs.getInt(3);
+                int asset = rs.getInt(4);
+                String address = rs.getString(5);
+                list.add(new LendReg(id, name, age, asset, address));
+
             }
 
         }catch (SQLException e){
