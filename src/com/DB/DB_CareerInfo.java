@@ -1,5 +1,7 @@
 package com.DB;
 
+import com.entity.Career;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -109,6 +111,74 @@ public class DB_CareerInfo {
                 }
             }
         }
+    }
+
+    public void UpdateCareer(Career Cr){
+        try{
+            String sql ="UPDATE career SET " +
+                    "`salary` =?" +
+                    "`year`  = ?" +
+                    "`location =?`";
+            psmt = con.prepareStatement(sql);
+            psmt.setInt(1,Cr.getSalary());
+            psmt.setInt(2,Cr.getYear());
+            psmt.setString(3, Cr.getLocation());
+            psmt.executeUpdate();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if(con != null){
+                try {
+                    con.close();
+                }catch (SQLException e){
+
+                }
+            }
+
+            if(psmt != null){
+                try {
+                    psmt.close();
+                }catch (SQLException e){
+
+                }
+            }
+        }
+    }
+
+    public Career getCareer(int id){
+        con = DBConnection.getConnection();
+        Career Cr = null;
+        try {
+            String sql = "SELECT * FROM career WHERE id = ?";
+            psmt = con.prepareStatement(sql);
+            psmt.setInt(1,id);
+            rs = psmt.executeQuery();
+            rs.next();
+
+            Cr = new Career(rs.getInt("id"), rs.getInt("pid"),
+                    rs.getInt("jid"), rs.getInt("salary"),
+                    rs.getInt("year"), rs.getString("location"));
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if(con != null){
+                try {
+                    con.close();
+                }catch (SQLException e){
+
+                }
+            }
+
+            if(psmt != null){
+                try {
+                    psmt.close();
+                }catch (SQLException e){
+
+                }
+            }
+        }
+
+        return Cr;
     }
 
 }
