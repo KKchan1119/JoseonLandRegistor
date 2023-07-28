@@ -7,15 +7,20 @@ public class JobController {
     DB_JobInfo jobInfo = new DB_JobInfo();
 
     public void write(){
-        String cmd = Container.getScanner().nextLine().trim();
+        System.out.println("추가할 직업 정보를 입력해주세요.");
+
         System.out.print("직업ID: ");
-        int jobIdIn = Integer.parseInt(cmd);
+        String inputId = Container.getScanner().nextLine().trim();
+        int jobIdIn = Integer.parseInt(inputId);
         System.out.print("서열: ");
-        int jobRankIn = Integer.parseInt(cmd);
+        String inputRank = Container.getScanner().nextLine().trim();
+        int jobRankIn = Integer.parseInt(inputRank);
         System.out.print("직업명: ");
-        String jobNameIn = cmd;
+        String inputJobName = Container.getScanner().nextLine().trim();
+        String jobNameIn = inputJobName;
         System.out.print("직업정보: ");
-        String jobInfoIn = cmd;
+        String inputJobInfo = Container.getScanner().nextLine().trim();
+        String jobInfoIn = inputJobInfo;
         jobInfo.InsertJob(jobIdIn, jobRankIn, jobNameIn, jobInfoIn);
     }
 

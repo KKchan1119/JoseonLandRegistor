@@ -14,7 +14,7 @@ public class DB_CareerInfo {
     public void SelectCareer(){
         try{
             con = DBConnection.getConnection();
-            String sql = "SELECT people.name, job.job, career.salary, career.year, career.location\n" +
+            String sql = "SELECT people.name, job.jobName, career.salary, career.year, career.location\n" +
                     "FROM career\n" +
                     "INNER JOIN people, job\n" +
                     "WHERE career.pid = people.id and career.jid =job.id";
@@ -55,7 +55,7 @@ public class DB_CareerInfo {
         try{
             con = DBConnection.getConnection();
 
-            String sql = "INSERT INTO job(`id`, `pid`, `jid`, `salary`, `year`, `location`)" +
+            String sql = "INSERT INTO career(`id`, `pid`, `jid`, `salary`, `year`, `location`)" +
                     "VALUES (?, ?, ?, ?, ?, ?)";
             psmt = con.prepareStatement(sql);
             psmt.setInt(1,id);

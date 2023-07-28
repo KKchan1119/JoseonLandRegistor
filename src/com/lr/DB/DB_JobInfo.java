@@ -20,9 +20,9 @@ public class DB_JobInfo {
                 int index = 1;
                 int id = rs.getInt(index++);
                 int rank = rs.getInt(index++);
-                String job = rs.getString(index++);
-                String info = rs.getString(index);
-                System.out.println(id+"| 서열: " +rank +" | 직업: "+ job+" | 직업정보: "+ info );
+                String jobName = rs.getString(index++);
+                String jobInfo = rs.getString(index);
+                System.out.println(id+"| 서열: " +rank +" | 직업: "+ jobName+" | 직업정보: "+ jobInfo );
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -45,17 +45,17 @@ public class DB_JobInfo {
         }
     }
 
-    public void InsertJob(int id, int rank, String job, String info){
+    public void InsertJob(int id, int rank, String jobName, String jobInfo){
         try{
             con = DBConnection.getConnection();
 
-            String sql = "INSERT INTO job(`id`, `rank`, `job`, `info`)" +
+            String sql = "INSERT INTO job(`id`, `rank`, `jobName`, `jobInfo`)" +
                     "VALUES (?, ?, ?, ?)";
             psmt = con.prepareStatement(sql);
             psmt.setInt(1,id);
             psmt.setInt(2, rank);
-            psmt.setString(3, job);
-            psmt.setString(4, info);
+            psmt.setString(3, jobName);
+            psmt.setString(4, jobInfo);
             psmt.executeUpdate();
 
         }catch (Exception e){

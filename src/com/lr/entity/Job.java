@@ -3,14 +3,14 @@ package com.lr.entity;
 public class Job {
     private int id;
     private int rank;
-    private String job;
-    private String info;
+    private String jobName;
+    private String jobInfo;
 
     public Job(int id, int rank, String job, String info){
         this.id = id;
         this.rank = rank;
-        this.job = job;
-        this.info = info;
+        this.jobName = job;
+        this.jobInfo = info;
     }
 
     public int getId() {
@@ -22,11 +22,11 @@ public class Job {
     }
 
     public String getJob() {
-        return job;
+        return jobName;
     }
 
     public String getInfo() {
-        return info;
+        return jobInfo;
     }
 
     public void setId(int id) {
@@ -37,11 +37,11 @@ public class Job {
         this.rank = rank;
     }
 
-    public void setJob(String job) {
-        this.job = job;
+    public void setJob(String jobName) {
+        this.jobName = jobName;
     }
 
-    public void setInfo(String info) {
-        this.info = info;
+    public void setInfo(String jobInfo) {
+        this.jobInfo = jobInfo;
     }
 }
