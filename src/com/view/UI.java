@@ -1,6 +1,6 @@
 package com.view;
 
-public class View {
+public class UI {
     public void title(){
         System.out.println("조 선 농 민 토 지 대 장");
     }

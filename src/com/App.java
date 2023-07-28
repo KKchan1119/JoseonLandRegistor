@@ -4,7 +4,7 @@ package com;
 import com.controller.CareerController;
 import com.controller.JobController;
 import com.controller.PeopleController;
-import com.view.View;
+import com.view.UI;
 
 
 public class App {
@@ -12,7 +12,7 @@ public class App {
         CareerController Ccon = new CareerController();
         PeopleController Pcon = new PeopleController();
         JobController Jcon = new JobController();
-        View v = new View();
+        UI v = new UI();
 
         v.title();
         v.version();
