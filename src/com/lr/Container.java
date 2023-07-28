@@ -1,4 +1,4 @@
-package com;
+package com.lr;
 import java.util.Scanner;
 
 public class Container {

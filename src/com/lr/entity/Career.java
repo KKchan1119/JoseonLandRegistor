@@ -1,4 +1,4 @@
-package com.entity;
+package com.lr.entity;
 
 public class Career {
 

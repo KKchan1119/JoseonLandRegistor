@@ -1,4 +1,4 @@
-package com.view;
+package com.lr.view;
 
 public class UI {
     public void title(){

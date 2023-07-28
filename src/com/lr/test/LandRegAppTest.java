@@ -1,5 +1,5 @@
-package com.test;
-import com.App;
+package com.lr.test;
+import com.lr.App;
 
 public class LandRegAppTest {
     public static void main(String[] args){

@@ -1,7 +1,4 @@
-package com;
-
-
-import java.util.Scanner;
+package com.lr;
 
 
 public class LandRegApp {

@@ -1,10 +1,10 @@
-package com;
+package com.lr;
 
 
-import com.controller.CareerController;
-import com.controller.JobController;
-import com.controller.PeopleController;
-import com.view.UI;
+import com.lr.controller.CareerController;
+import com.lr.controller.JobController;
+import com.lr.controller.PeopleController;
+import com.lr.view.UI;
 
 
 public class App {

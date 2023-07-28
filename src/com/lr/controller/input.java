@@ -1,4 +1,4 @@
-package com.controller;
+package com.lr.controller;
 import java.util.Scanner;
 public class input {
     public static Scanner scanner = new Scanner(System.in);

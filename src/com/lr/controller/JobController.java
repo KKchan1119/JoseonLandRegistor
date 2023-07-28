@@ -1,7 +1,7 @@
-package com.controller;
+package com.lr.controller;
 
-import com.Container;
-import com.DB.DB_JobInfo;
+import com.lr.Container;
+import com.lr.DB.DB_JobInfo;
 
 public class JobController {
     DB_JobInfo jobInfo = new DB_JobInfo();

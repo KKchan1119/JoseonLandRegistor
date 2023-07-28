@@ -1,8 +1,9 @@
-package com.controller;
+package com.lr.controller;
 
-import com.Container;
-import com.DB.DB_PeopleInfo;
-import com.entity.People;
+import com.lr.Container;
+import com.lr.DB.DB_PeopleInfo;
+import com.lr.entity.People;
+
 public class PeopleController {
     DB_PeopleInfo peopleInfo = new DB_PeopleInfo();
 

@@ -1,6 +1,6 @@
-package com.DB;
+package com.lr.DB;
 
-import com.entity.People;
+import com.lr.entity.People;
 
 import java.sql.Connection;
 import java.sql.Statement;

@@ -1,4 +1,4 @@
-package com.system.controller;
+package com.lr.system.controller;
 
 public class SystemController {
 }

@@ -1,8 +1,8 @@
-package com.controller;
+package com.lr.controller;
 
-import com.Container;
-import com.DB.DB_CareerInfo;
-import com.entity.Career;
+import com.lr.Container;
+import com.lr.DB.DB_CareerInfo;
+import com.lr.entity.Career;
 
 public class CareerController {
     DB_CareerInfo careerInfo = new DB_CareerInfo();

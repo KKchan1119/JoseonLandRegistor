@@ -1,6 +1,6 @@
-package com.DB;
+package com.lr.DB;
 
-import com.entity.Career;
+import com.lr.entity.Career;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
