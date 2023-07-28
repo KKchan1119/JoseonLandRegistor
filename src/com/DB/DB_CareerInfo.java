@@ -14,19 +14,21 @@ public class DB_CareerInfo {
     public void SelectCareer(){
         try{
             con = DBConnection.getConnection();
-            String sql = "SELECT * FROM career";
+            String sql = "SELECT people.name, job.job, career.salary, career.year, career.location\n" +
+                    "FROM career\n" +
+                    "INNER JOIN people, job\n" +
+                    "WHERE career.pid = people.id and career.jid =job.id";
             psmt = con.prepareStatement(sql);
             rs = psmt.executeQuery();
 
             while(rs.next()){
                 int index = 1;
-                int id = rs.getInt(index++);
-                int pid = rs.getInt(index++);
-                int jid = rs.getInt(index++);
+                String name = rs.getString(index++);
+                String job = rs.getString(index++);
                 int year = rs.getInt(index++);
                 int salary = rs.getInt(index++);
                 String location = rs.getString(index);
-                System.out.println(id+"| 사람ID: " +pid +" | 직업ID: "+ jid+" | 봉급: "+ salary+" | 년차: "+ year+" | 노동지역: "+ location );
+                System.out.println("| 이름: " +name +" | 직업: "+ job +" | 봉급: "+ salary+" | 년차: "+ year+" | 노동지역: "+ location );
             }
         }catch (Exception e){
             e.printStackTrace();

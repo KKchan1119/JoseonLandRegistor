@@ -1,12 +1,12 @@
 package com.entity;
-public class LendReg {
+public class People {
     private int id;
     private  String name;
     private  int age;
     private  int asset;
     private  String address;
 
-    public LendReg(int id, String name, int age, int asset, String address) {
+    public People(int id, String name, int age, int asset, String address) {
         this.id = id;
         this.name = name;
         this.age = age;

@@ -1,6 +1,6 @@
 package com.DB;
 
-import com.entity.LendReg;
+import com.entity.People;
 
 import java.sql.Connection;
 import java.sql.Statement;
@@ -15,7 +15,6 @@ public class DB_PeopleInfo {
     PreparedStatement psmt = null;
     public void SelectPeople(){
         try{
-
             con = DBConnection.getConnection();
             stmt = con.createStatement();
             String sql = "SELECT * FROM people";
@@ -27,7 +26,6 @@ public class DB_PeopleInfo {
                 int age = rs.getInt(index++);
                 int asset = rs.getInt(index++);
                 String address = rs.getString(index);
-
                 System.out.println(id+"| 함자: " +name +" | 나이: "+ age+" | 재산: "+ asset +" | 주소: "+address);
             }
 
@@ -113,7 +111,7 @@ public class DB_PeopleInfo {
     }
 
 
-    public void UpdatePeople(LendReg lr){
+    public void UpdatePeople(People lr){
         con = DBConnection.getConnection();
         try{
             String sql = "UPDATE people SET " +
@@ -150,16 +148,16 @@ public class DB_PeopleInfo {
     }
 
 
-    public LendReg getPeople(int id) {
+    public People getPeople(int id) {
         con = DBConnection.getConnection();
-        LendReg lr = null;
+        People Pp = null;
         try {
             String sql = "SELECT * FROM people WHERE id = ?";
             psmt = con.prepareStatement(sql);
             psmt.setInt(1,id);
             rs = psmt.executeQuery();
             rs.next();
-            lr = new LendReg(rs.getInt("id"), rs.getString("name"),rs.getInt("age"),
+            Pp = new People(rs.getInt("id"), rs.getString("name"),rs.getInt("age"),
                     rs.getInt("asset"), rs.getString("address"));
         }catch (Exception e){
             e.printStackTrace();
@@ -179,6 +177,6 @@ public class DB_PeopleInfo {
             }
         }
 
-        return lr;
+        return Pp;
     }
 }
