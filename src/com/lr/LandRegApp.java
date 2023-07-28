@@ -3,6 +3,7 @@ package com.lr;
 
 public class LandRegApp {
     public static void main(String[] args){
+
 //        Scanner sc = new Scanner(System.in);
 //        Controller ctrl = new Controller();
 //        int cmdNum;
